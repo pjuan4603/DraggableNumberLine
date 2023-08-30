@@ -42,11 +42,17 @@ document.addEventListener('mousemove', (e) => {
   if (Math.min(...value) < -5) {
     leftPointer.textContent = `Left Pointer: < -5`;
     ld = true;
+  } else if (Math.min(...value) > 5) {
+    leftPointer.textContent = `Left Pointer: > 5`;
+    ld = true; 
   }
 
   var rd = false; //Left Pointer Displayed
   if (Math.max(...value) > 5) {
     rightPointer.textContent = `Right Pointer: > 5`;
+    rd = true;
+  } else if (Math.max(...value) < -5) {
+    rightPointer.textContent = `Right Pointer: < -5`;
     rd = true;
   }
 
