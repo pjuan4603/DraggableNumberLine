@@ -1,0 +1,101 @@
+.title {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.number-line {
+  position: relative;
+  width: 60vw;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  margin-top: 20vh;
+  margin-left: 17.5vw;
+  margin-right: 17.5vw;
+}
+
+.line {
+  width: 100%;
+  border: none;
+  border-top: 1px solid black;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.line::before,
+.line::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.line::before {
+  border-width: 5px 5px 5px 0;
+  border-color: transparent black transparent transparent;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.line::after {
+  border-width: 5px 0 5px 5px;
+  border-color: transparent transparent transparent black;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.tick {
+  width: 2px;
+  height: 20px;
+  background-color: black;
+  position: absolute;
+}
+
+.point {
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 40px;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  border: 20px transparent;
+}
+
+.point:hover {
+  width: 15px;
+  height: 15px;
+  background-color: rgba(128, 128, 128, 0.5);
+  top: 50px;
+}
+
+.highlight {
+  position: absolute;
+  bottom: 48px;
+  height: 4px;
+  background-color: black;
+  width: 0;
+}
+
+.number-label {
+  position: absolute;
+  top: 10px;
+  text-align: center;
+  pointer-events: none;
+}
+
+#leftPointer, #rightPointer {
+  text-align: center;
+}
